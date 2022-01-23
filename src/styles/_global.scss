@@ -1,0 +1,52 @@
+@mixin flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin flex-row {
+  @include flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+:root {
+  /* Theme variables */
+  --primary-color: #27272c;
+  --secondary-color: #232327;
+  --ternary-color: #232327;
+  --text-color: #bdbdbd;
+  --info-color: #4b53b7;
+  --success-color: #199673;
+  --warning-color: #232327;
+  --danger-color: #E6367E;
+  --white-color: #fff;
+  --black-color: #000;
+  --gray-color: #ccc;
+}
+:root.white {
+  /* Theme variables */
+  --primary-color: #f4f4f5;
+  --secondary-color: #ededed;
+  --ternary-color: #232327;
+  --text-color: #636369;
+  --info-color: #4EC2E9;
+  --success-color: #42CB6F;
+  --warning-color: #232327;
+  --danger-color: #ED5F55;
+  --white-color: #fff;
+  --black-color: #000;
+  --gray-color: #ccc;
+}
+
+body {
+  @include flex;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  align-items: center;
+  overflow: hidden;
+  background: var(--primary-color);
+  font-family: "Google Sans";
+  transition: background .3s ease;
+}
