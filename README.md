@@ -22,7 +22,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
+[![Youtube][youtube-shield]][youtube-url]
 
 
 <!-- PROJECT LOGO -->
@@ -158,4 +158,6 @@ Don't forget to give the project a star! Thanks again!
 [license-url]: https://github.com/Coding-Fibre/registration/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/loic-monard
+[youtube-shield]: https://img.shields.io/youtube/channel/views/UC9dQrfCFlNNvOANIr-7FFKg?logo=Youtube&style=for-the-badge
+[youtube-url]: https://www.youtube.com/channel/UC9dQrfCFlNNvOANIr-7FFKg
 [product-screenshot]: images/screenshot.png
