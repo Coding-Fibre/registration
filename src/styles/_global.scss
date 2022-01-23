@@ -23,6 +23,20 @@
   --black-color: #000;
   --gray-color: #ccc;
 }
+:root.white {
+  // Theme variables
+  --primary-color: #f4f4f5;
+  --secondary-color: #ededed;
+  --ternary-color: #232327;
+  --text-color: #636369;
+  --info-color: #4EC2E9;
+  --success-color: #42CB6F;
+  --warning-color: #232327;
+  --danger-color: #ED5F55;
+  --white-color: #fff;
+  --black-color: #000;
+  --gray-color: #ccc;
+}
 
 body {
   @include flex;

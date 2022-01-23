@@ -1,4 +1,5 @@
 <template>
+  <ThemeSwitcher />
   <form>
     <h3>Sign up with your email</h3>
     <div class="input">
@@ -66,6 +67,7 @@
 
 <script>
 import validationMixin from '../mixins/validationMixin.js'
+import ThemeSwitcher from './ThemeSwitcher.vue'
 
 export default {
   name: "registration",
@@ -119,7 +121,10 @@ export default {
       })
     }
   },
-  mixins: [validationMixin]
+  mixins: [validationMixin],
+  components: {
+    ThemeSwitcher
+  }
 }
 </script>
 
