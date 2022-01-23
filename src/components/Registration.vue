@@ -6,6 +6,8 @@
         type="text" 
         name="username" 
         id="username"
+        v-model="form.username"
+        :class="getInputClass('username')"
       >
       <label for="username" class="placeholder">
         <span>Enter username</span>
@@ -16,6 +18,8 @@
         type="password" 
         name="password" 
         id="password"
+        v-model="form.password"
+        :class="getInputClass('password')"
       >
       <label for="password" class="placeholder">
         <span>Enter password</span>
@@ -26,14 +30,14 @@
         type="text" 
         name="email" 
         id="email"
+        v-model="form.email"
+        :class="getInputClass('email')"
       >
       <label for="email" class="placeholder">
         <span>Enter email</span>
       </label>
     </div>
-    <div class="actions">
-      <button type="submit">Create account</button>
-    </div>
+    <button type="submit">Create account</button>
   </form>
 </template>
 
@@ -41,6 +45,11 @@
 export default {
   name: "registration",
   data: () => ({
+    form: {
+      username: '',
+      password: '',
+      email: ''
+    }
   }),
   methods: {
     getInputClass(inputName) {
@@ -84,7 +93,7 @@ form {
       &:focus, &:hover, &.filled {
         border: 2px solid var(--info-color);
       }
-      &:focus + .placeholder span {
+      &:focus + .placeholder span, &.filled + .placeholder span {
         transform: translateY(-100%);
       }
     }
