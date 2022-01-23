@@ -10,9 +10,10 @@ import Registration from './components/Registration.vue'
 @import './styles/global.scss';
 
 #app {
-  @include flex-row;
+  @include flex;
+  align-items: center;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 100%;
 }
 </style>

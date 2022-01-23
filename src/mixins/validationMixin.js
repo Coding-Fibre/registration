@@ -4,28 +4,29 @@ const UPPER_CASE_REGEX = /(.*[A-Z].*)/;
 const DIGITS_REGEX = /(.*\d.*)/;
 const SYMBOLS_REGEX = /[-+_!/\\@#$%^&*.,?()]/;
 
+
 const validationMixin = {
   data: () => ({
     validationRules: {
-      email: {
+      username: {
         rules: [
-          value => EMAIL_REGEX.test(value) || 'Please enter a valid email address',
+          value => value.length > 3 || 'Username must be at least 4 characters long',
         ]
       },
       password: {
         rules: [
+          value => value.length > 11 || 'Password must be at least 12 characters long',
           value => LOWER_CASE_REGEX.test(value) || 'Password should contain at least one lower case letter',
           value => UPPER_CASE_REGEX.test(value) || 'Password should contain at least one upper case letter',
           value => DIGITS_REGEX.test(value) || 'Password should contain at least one digit',
           value => SYMBOLS_REGEX.test(value) || 'Password should contain at least one symbol',
-          value => (value.length > 11) || 'Password must be at least 12 characters long',
         ]
       },
-      username: {
+      email : {
         rules: [
-          value => (value.length > 3) || "Username must be at least 4 characters long",
+          value => EMAIL_REGEX.test(value) || 'Please enter a valid email address',
         ]
-      },
+      }
     }
   }),
   methods: {
@@ -33,32 +34,32 @@ const validationMixin = {
       return this.validationRules[inputName].rules
         .filter(rule => {
           const isValid = rule(value);
-  
+
           if(isValid !== true) {
             return isValid;
           }
         })
-        .map(rule => rule(value))
+        .map(rule => rule(value));
     },
     validateForm(form) {
       const formErrors = {};
       let formIsValid = true;
-  
+
       for(let property in form) {
         const errors = this.validateField(property, form[property]);
-  
+
         if(errors.length) {
           formIsValid = false;
         }
-  
+
         formErrors[property] = errors;
       }
-  
+
       formErrors.formIsValid = formIsValid;
-  
-      return formErrors;
+
+      return formErrors
     }
-  },
+  }
 }
 
-export default validationMixin;
+export default validationMixin
